@@ -1,62 +1,249 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SPARK Tools Dashboard</title>
+  <meta charset="UTF-8" />
+  <title>SPARK Command Center</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; background: #f7f7f7; }
-    h1 { color: #222; }
-    .tool { background: white; padding: 18px; margin: 12px 0; border-radius: 10px; border-left: 6px solid #4b6cb7; }
-    .tool h2 { margin: 0 0 8px; }
-    a { color: #0645ad; font-weight: bold; }
-    .use { color: #444; }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #111827, #1e293b);
+      color: #f8fafc;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    header {
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 42px;
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      margin-top: 8px;
+      color: #cbd5e1;
+      font-size: 18px;
+    }
+
+    .section-title {
+      margin: 34px 0 14px;
+      color: #e2e8f0;
+      font-size: 20px;
+      border-left: 5px solid #38bdf8;
+      padding-left: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .tile {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 22px;
+      min-height: 210px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .tile h2 {
+      margin: 0 0 8px;
+      font-size: 24px;
+    }
+
+    .tile p {
+      color: #cbd5e1;
+      line-height: 1.45;
+      min-height: 66px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .btn {
+      text-decoration: none;
+      color: white;
+      background: #2563eb;
+      padding: 9px 13px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .btn.secondary {
+      background: #475569;
+    }
+
+    .hint {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .workflow,
+    .status {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+
+    .workflow ol {
+      margin: 10px 0 0;
+      padding-left: 22px;
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px 20px;
+      color: #cbd5e1;
+    }
+
+    .check {
+      color: #22c55e;
+      font-weight: bold;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .status-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <h1>SPARK Command Center</h1>
+      <div class="subtitle">Your local launcher and guide for ChatGPT, Codex, Linear, GitHub, VS Code, and GitHub Desktop.</div>
+    </header>
 
-  <h1>SPARK Tools Dashboard</h1>
-  <p>Quick guide for when to use each tool.</p>
+    <div class="section-title">Development Tools</div>
 
-  <div class="tool">
-    <h2>ChatGPT Desktop</h2>
-    <p class="use">Use for planning, explanations, debugging help, summaries, and general guidance.</p>
-    <p><strong>Launch:</strong> Search Windows for <b>ChatGPT</b></p>
+    <div class="grid">
+      <div class="tile">
+        <h2>VS Code</h2>
+        <p>Edit project files such as HTML, Markdown, Python, JavaScript, and AGENTS.md.</p>
+        <div class="buttons">
+          <a class="btn" href="vscode://file/C:/CUA_Courses/Spark/github/repo/spark-hello-world">Open Project</a>
+          <a class="btn secondary" href="https://code.visualstudio.com/" target="_blank">Website</a>
+        </div>
+        <div class="hint">Use this when you want to directly edit files.</div>
+      </div>
+
+      <div class="tile">
+        <h2>Codex</h2>
+        <p>Use AI to help modify, explain, debug, or build code inside your local project.</p>
+        <div class="buttons">
+          <a class="btn" href="codex://">Open App</a>
+          <a class="btn secondary" href="https://chatgpt.com/codex" target="_blank">Web</a>
+        </div>
+        <div class="hint">Use this when you want AI coding assistance.</div>
+      </div>
+
+      <div class="tile">
+        <h2>GitHub Desktop</h2>
+        <p>Commit, push, pull, and manage Git changes without using the command line.</p>
+        <div class="buttons">
+          <a class="btn" href="github-desktop://">Open App</a>
+          <a class="btn secondary" href="https://desktop.github.com/" target="_blank">Website</a>
+        </div>
+        <div class="hint">Use this after changing files.</div>
+      </div>
+    </div>
+
+    <div class="section-title">Planning and Collaboration</div>
+
+    <div class="grid">
+      <div class="tile">
+        <h2>ChatGPT Desktop</h2>
+        <p>Ask questions, plan projects, troubleshoot setup issues, and summarize work.</p>
+        <div class="buttons">
+          <a class="btn" href="chatgpt://">Open App</a>
+          <a class="btn secondary" href="https://chatgpt.com" target="_blank">Web</a>
+        </div>
+        <div class="hint">Use this when you need guidance or explanations.</div>
+      </div>
+
+      <div class="tile">
+        <h2>Linear</h2>
+        <p>Track tasks, issues, bugs, project progress, and team workflow.</p>
+        <div class="buttons">
+          <a class="btn" href="linear://">Open App</a>
+          <a class="btn secondary" href="https://linear.app" target="_blank">Web</a>
+        </div>
+        <div class="hint">Use this to organize what needs to be done.</div>
+      </div>
+
+      <div class="tile">
+        <h2>GitHub Repo</h2>
+        <p>View your remote repository, commits, files, and project history online.</p>
+        <div class="buttons">
+          <a class="btn" href="https://github.com/yemane5/spark-hello-world" target="_blank">Open Repo</a>
+          <a class="btn secondary" href="https://github.com/yemane5" target="_blank">Profile</a>
+        </div>
+        <div class="hint">Use this to verify that your push succeeded.</div>
+      </div>
+    </div>
+
+    <div class="section-title">Workflow</div>
+
+    <div class="workflow">
+      <strong>Recommended SPARK workflow</strong>
+      <ol>
+        <li>Plan the work in ChatGPT.</li>
+        <li>Create or review the task in Linear.</li>
+        <li>Edit files in VS Code.</li>
+        <li>Ask Codex for coding help when needed.</li>
+        <li>Commit changes in GitHub Desktop.</li>
+        <li>Push to GitHub.</li>
+        <li>Verify the files on GitHub.</li>
+        <li>Update the Linear task status.</li>
+      </ol>
+    </div>
+
+    <div class="section-title">Setup Status</div>
+
+    <div class="status">
+      <div class="status-grid">
+        <div><span class="check">✓</span> Git installed</div>
+        <div><span class="check">✓</span> GitHub Desktop installed</div>
+        <div><span class="check">✓</span> GitHub repository created</div>
+        <div><span class="check">✓</span> VS Code installed</div>
+        <div><span class="check">✓</span> ChatGPT Desktop installed</div>
+        <div><span class="check">✓</span> Codex installed</div>
+        <div><span class="check">✓</span> Linear installed</div>
+        <div><span class="check">✓</span> AGENTS.md created</div>
+        <div><span class="check">✓</span> Hello World page created</div>
+        <div><span class="check">✓</span> Project pushed to GitHub</div>
+      </div>
+    </div>
   </div>
-
-  <div class="tool">
-    <h2>Codex</h2>
-    <p class="use">Use for AI-assisted coding inside a project/repository.</p>
-    <p><strong>Launch:</strong> Search Windows for <b>Codex</b></p>
-  </div>
-
-  <div class="tool">
-    <h2>VS Code</h2>
-    <p class="use">Use to edit files like HTML, Markdown, Python, JavaScript, and AGENTS.md.</p>
-    <p><strong>Launch:</strong> Search Windows for <b>Visual Studio Code</b></p>
-  </div>
-
-  <div class="tool">
-    <h2>GitHub</h2>
-    <p class="use">Use to store your code online, verify commits, and share your repository.</p>
-    <p><a href="https://github.com/yemane5/spark-hello-world" target="_blank">Open spark-hello-world repo</a></p>
-  </div>
-
-  <div class="tool">
-    <h2>GitHub Desktop</h2>
-    <p class="use">Use to commit, push, pull, and manage Git changes without command-line commands.</p>
-    <p><strong>Launch:</strong> Search Windows for <b>GitHub Desktop</b></p>
-  </div>
-
-  <div class="tool">
-    <h2>Linear</h2>
-    <p class="use">Use to manage project tasks, issues, bugs, and progress.</p>
-    <p><a href="https://linear.app" target="_blank">Open Linear Web</a></p>
-    <p><strong>Desktop:</strong> Search Windows for <b>Linear</b></p>
-  </div>
-
-  <div class="tool">
-    <h2>Typical Workflow</h2>
-    <p>Plan in ChatGPT → Track task in Linear → Code in VS Code/Codex → Commit in GitHub Desktop → Verify on GitHub.</p>
-  </div>
-
 </body>
 </html>
