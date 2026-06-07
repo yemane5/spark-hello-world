@@ -4,10 +4,6 @@
   <meta charset="UTF-8" />
   <title>SPARK Command Center</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
@@ -21,14 +17,9 @@
       padding: 40px 24px;
     }
 
-    header {
-      margin-bottom: 32px;
-    }
-
     h1 {
       margin: 0;
       font-size: 42px;
-      letter-spacing: -1px;
     }
 
     .subtitle {
@@ -39,7 +30,6 @@
 
     .section-title {
       margin: 34px 0 14px;
-      color: #e2e8f0;
       font-size: 20px;
       border-left: 5px solid #38bdf8;
       padding-left: 10px;
@@ -57,7 +47,6 @@
       border-radius: 18px;
       padding: 22px;
       min-height: 210px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
     }
 
     .tile h2 {
@@ -79,6 +68,7 @@
     }
 
     .btn {
+      display: inline-block;
       text-decoration: none;
       color: white;
       background: #2563eb;
@@ -108,8 +98,6 @@
     }
 
     .workflow ol {
-      margin: 10px 0 0;
-      padding-left: 22px;
       color: #cbd5e1;
       line-height: 1.8;
     }
@@ -125,24 +113,12 @@
       color: #22c55e;
       font-weight: bold;
     }
-
-    @media (max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .status-grid {
-        grid-template-columns: 1fr;
-      }
-    }
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>SPARK Command Center</h1>
-      <div class="subtitle">Your local launcher and guide for ChatGPT, Codex, Linear, GitHub, VS Code, and GitHub Desktop.</div>
-    </header>
+    <h1>SPARK Command Center</h1>
+    <div class="subtitle">Local launcher and guide for your SPARK tools.</div>
 
     <div class="section-title">Development Tools</div>
 
@@ -159,7 +135,7 @@
 
       <div class="tile">
         <h2>Codex</h2>
-        <p>Use AI to help modify, explain, debug, or build code inside your local project.</p>
+        <p>Use AI to help modify, explain, debug, or build code inside your project.</p>
         <div class="buttons">
           <a class="btn" href="codex://">Open App</a>
           <a class="btn secondary" href="https://chatgpt.com/codex" target="_blank">Web</a>
@@ -171,7 +147,7 @@
         <h2>GitHub Desktop</h2>
         <p>Commit, push, pull, and manage Git changes without using the command line.</p>
         <div class="buttons">
-          <a class="btn" href="github-desktop://">Open App</a>
+          <a class="btn" href="x-github-client://openRepo/C:/CUA_Courses/Spark/github/repo/spark-hello-world">Open App</a>
           <a class="btn secondary" href="https://desktop.github.com/" target="_blank">Website</a>
         </div>
         <div class="hint">Use this after changing files.</div>
